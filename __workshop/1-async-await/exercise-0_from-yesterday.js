@@ -15,7 +15,10 @@ const compareToTen = (num) => {
 }
 
 const myFunc = async (num) => {
-    // add code here
+    try {
+        let comparedNum = await compareToTen(num)
+        console.log(comparedNum)
+    } catch (err) { console.log(err)}
 }
 
 myFunc(15);
@@ -53,7 +56,12 @@ const sortWords = (array) => {
 
 const textTransform = async (array) => {
     // add code here
+    try {
+        let foo = await makeAllCaps(array);
+        let bar = await sortWords(foo);
+        console.log(bar)
+    } catch (err) {console.log(err) }
 }
 
-textTransform(['cucumber', 'tomatos', 'avocado']);
 textTransform(['cucumber', 44, true]);
+textTransform(['cucumber', 'tomatos', 'avocado']);
